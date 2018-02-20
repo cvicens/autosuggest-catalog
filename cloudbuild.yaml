@@ -27,7 +27,7 @@ steps:
           template:
             spec:
               containers:
-                - name: autosuggest-catalogi
+                - name: autosuggest-catalogo
                   image: eu.gcr.io/$PROJECT_ID/autosuggest-catalogo:$TAG_NAME
     env:
     - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-d'
