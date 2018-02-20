@@ -27,8 +27,8 @@ steps:
           template:
             spec:
               containers:
-                - name: autosuggest-catalogo
-                  image: eu.gcr.io/$PROJECT_ID/autosuggest-catalogo:$TAG_NAME
+                - name: autosuggest-catalog
+                  image: eu.gcr.io/$PROJECT_ID/autosuggest-catalog:$TAG_NAME
     env:
     - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-d'
     - 'CLOUDSDK_CONTAINER_CLUSTER=autosuggest-cluster-eu'
@@ -51,8 +51,8 @@ steps:
           template:
             spec:
               containers:
-                - name: autosuggest-catalogo
-                  image: eu.gcr.io/$PROJECT_ID/autosuggest-catalogo:$TAG_NAME
+                - name: autosuggest-catalog
+                  image: eu.gcr.io/$PROJECT_ID/autosuggest-catalog:$TAG_NAME
     env:
     - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
     - 'CLOUDSDK_CONTAINER_CLUSTER=autosuggest-cluster-us'
