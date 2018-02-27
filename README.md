@@ -14,3 +14,12 @@ git tag -a ${IMAGE_VERSION} -m "version ${IMAGE_VERSION}" ; git push origin mast
 # Optional if trigger in GCE Builder
 gcloud docker -- push eu.gcr.io/$PROJECT_ID/$IMAGE_NAME:$IMAGE_VERSION
 
+# Prepare container... to get JSON from GS
+
+apt-get update
+apt-get install curl
+apt-get install python
+curl https://sdk.cloud.google.com | bash
+gcloud init --console-only
+gsutil cp gs://autosuggest-bucket/products.json .
+mongoimport --jsonArray --db mydb --collection products < products.json
